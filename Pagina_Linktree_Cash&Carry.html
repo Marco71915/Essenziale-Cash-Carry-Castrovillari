@@ -9,7 +9,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       /* Sfondo graduale bianco → rosso */
-      background: linear-gradient(to bottom, white 20%, #ffcccc 100%, red 100%);
+      background: linear-gradient(to bottom, white 60%, #ffcccc 85%, red 100%);
       background-repeat: no-repeat;
       background-attachment: fixed;
       text-align: center;
@@ -75,11 +75,11 @@
   </div>
   -->
 
-  <!-- Bottone Facebook -->
-  <div class="link-button" id="facebookButton" role="button" tabindex="0">
+  <!-- Bottone Facebook (link diretto al profilo via web) -->
+  <a class="link-button" href="https://www.facebook.com/profile.php?id=61580430118990" target="_blank">
     <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
     Seguici su Facebook
-  </div>
+  </a>
 
   <!-- Bottone Contattaci -->
   <a class="link-button" href="tel:3284113857">
@@ -88,25 +88,10 @@
   </a>
 
   <script>
-    // Funzione generica per tentare apertura app + fallback web
-    function openAppOrWeb(appUrl, webUrl) {
-      const start = Date.now();
-      window.location = appUrl;
-      setTimeout(function() {
-        if (Date.now() - start < 1500) {
-          window.open(webUrl, '_blank');
-        }
-      }, 1000);
-    }
-
-    // Bottone Facebook
-    document.getElementById('facebookButton').addEventListener('click', function () {
-      openAppOrWeb('fb://page/61580430118990', 'https://www.facebook.com/profile.php?id=61580430118990');
-    });
-
-    /* Instagram momentaneamente disattivato
+    // Bottone Instagram momentaneamente disattivato
+    /*
     document.getElementById('instagramButton').addEventListener('click', function () {
-      openAppOrWeb('instagram://user?username=soluzione_ufficio_olivetti', 'https://www.facebook.com/profile.php?id=61580430118990');
+      openAppOrWeb('instagram://user?username=soluzione_ufficio_olivetti', 'https://www.instagram.com/soluzione_ufficio_olivetti/');
     });
     */
   </script>
