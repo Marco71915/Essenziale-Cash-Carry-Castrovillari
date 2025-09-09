@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cash & Carry - Link Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* Sfondo graduale bianco → rosso */
+      background: linear-gradient(to bottom, white 20%, #ffcccc 100%, red 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+    }
+
+    .logo {
+      max-width: 300px;
+      border-radius: 0;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      transition: transform 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .link-button:hover {
+      transform: scale(1.03);
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    .phone-icon {
+      filter: hue-rotate(100deg) saturate(300%); /* rende l’icona verde */
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <img src="logo.png" alt="Logo Cash & Carry" class="logo" />
+
+  <!-- Bottone Google Recensioni -->
+  <a class="link-button" href="https://tinyurl.com/3rf273m9" target="_blank" rel="noopener noreferrer">
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google" />
+    Lasciaci una Recensione
+  </a>
+
+  <!-- Bottone Instagram (COMMENTATO perché non ancora attivo) -->
+  <!--
+  <div class="link-button" id="instagramButton" role="button" tabindex="0">
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+    Seguici su Instagram
+  </div>
+  -->
+
+  <!-- Bottone Facebook -->
+  <div class="link-button" id="facebookButton" role="button" tabindex="0">
+    <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+    Seguici su Facebook
+  </div>
+
+  <!-- Bottone Contattaci -->
+  <a class="link-button" href="tel:3284113857">
+    <img class="icon phone-icon" src="https://cdn-icons-png.flaticon.com/128/9946/9946341.png" alt="Telefono" />
+    Contattaci
+  </a>
+
+  <script>
+    // Funzione generica per tentare apertura app + fallback web
+    function openAppOrWeb(appUrl, webUrl) {
+      const start = Date.now();
+      window.location = appUrl;
+      setTimeout(function() {
+        if (Date.now() - start < 1500) {
+          window.open(webUrl, '_blank');
+        }
+      }, 1000);
+    }
+
+    // Bottone Facebook
+    document.getElementById('facebookButton').addEventListener('click', function () {
+      openAppOrWeb('fb://page/761580430118990', 'https://www.facebook.com/profile.php?id=61580430118990');
+    });
+
+    /* Instagram momentaneamente disattivato
+    document.getElementById('instagramButton').addEventListener('click', function () {
+      openAppOrWeb('instagram://user?username=soluzione_ufficio_olivetti', 'https://www.facebook.com/profile.php?id=61580430118990');
+    });
+    */
+  </script>
+</body>
+</html>
